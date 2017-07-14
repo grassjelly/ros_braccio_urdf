@@ -82,7 +82,7 @@
 
     <joint name="base_joint" type="revolute">
         <axis xyz="0 0 -1" />
-        <limit effort="1000.0" lower="0.0" upper="3.1416" velocity="4.0" />
+        <limit effort="1000.0" lower="0.0" upper="3.1416" velocity="1.0" />
         <origin rpy="0 0 0" xyz="0 0 0" />
         <parent link="base_link" />
         <child link="braccio_base_link" />
@@ -90,7 +90,7 @@
 
     <joint name="shoulder_joint" type="revolute">
         <axis xyz="1 0 0" />
-        <limit effort="1000.0" lower="0.2618" upper="2.8798" velocity="4.0" />
+        <limit effort="1000.0" lower="0.2618" upper="2.8798" velocity="1.0" />
         <origin rpy="-1.5708 0 0" xyz="0 -.002 0.072" />
         <parent link="braccio_base_link" />
         <child link="shoulder_link" />
@@ -98,7 +98,7 @@
 
     <joint name="elbow_joint" type="revolute">
         <axis xyz="1 0 0" />
-        <limit effort="1000.0" lower="0" upper="3.1416" velocity="4.0" />
+        <limit effort="1000.0" lower="0" upper="3.1416" velocity="1.0" />
         <origin rpy="-1.5708 0 0" xyz="0 0 0.125" />
         <parent link="shoulder_link" />
         <child link="elbow_link" />
@@ -106,7 +106,7 @@
 
     <joint name="wrist_pitch_joint" type="revolute">
         <axis xyz="1 0 0" />
-        <limit effort="1000.0" lower="0" upper="3.1416" velocity="4.0" />
+        <limit effort="1000.0" lower="0" upper="3.1416" velocity="1.0" />
         <origin rpy="-1.5708 0 0" xyz="0 0 0.125" />
         <parent link="elbow_link" />
         <child link="wrist_pitch_link" />
@@ -114,7 +114,7 @@
 
     <joint name="wrist_roll_joint" type="revolute">
         <axis xyz="0 0 -1" />
-        <limit effort="1000.0" lower="0.0" upper="3.1416" velocity="4.0" />
+        <limit effort="1000.0" lower="0.0" upper="3.1416" velocity="1.0" />
         <origin rpy="0 0 0" xyz="0 0.0 0.06" />
         <parent link="wrist_pitch_link" />
         <child link="wrist_roll_link" />
@@ -122,7 +122,7 @@
 
     <joint name="gripper_joint" type="revolute">
         <axis xyz="0 -1 0" />
-        <limit effort="1000.0" lower="0.7854" upper="1.5708" velocity="4.0" />
+        <limit effort="1000.0" lower="1.217" upper="1.5708" velocity="1.0" />
         <origin rpy="0 0 0" xyz="0.010 0 0.03" />
         <parent link="wrist_roll_link" />
         <child link="right_gripper_link" />
@@ -131,7 +131,7 @@
     <joint name="sub_gripper_joint" type="revolute">
         <axis xyz="0 1 0" />
         <mimic joint="gripper_joint" />
-        <limit effort="1000.0" lower="1.216798176" upper="2.3559" velocity="4.0" />
+        <limit effort="1000.0" lower="1.5708" upper="2.7876" velocity="1.0" />
         <origin rpy="0 3.1416 0" xyz="-0.010 0 0.03" />
         <parent link="wrist_roll_link" />
         <child link="left_gripper_link" />
